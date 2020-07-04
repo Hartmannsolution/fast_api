@@ -2,8 +2,17 @@ version: "3.7"
 services:
   fast_api:
     build: ./fast_api_server
-    volumes: 
-    - ./fast_api_server/app:/app
+    # volumes: 
+    # - ./fast_api_server/app:/app
     ports: 
       - "8001:80"
     container_name: "fast_api_server"
+    volumes:
+      - ./fast_api_server/app:/app
+    networks:
+      - my-proxy-net
+
+networks:
+  my-proxy-net:
+    external:
+      name: mysql8_network
