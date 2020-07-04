@@ -18,4 +18,4 @@ open a terminal in vs code (it will open as root in the container). enter: `uvic
 
 Make changes to main.py and see how the server is reloaded and changes takes effect in browser.
 
-- Inside the devcontainer.json file add: `"remoteUser key": "vscode",` in order to be logged in as vscode instead of root in the terminal (This means that ownership of new files will not be root and thereby locked for other users.)
+- Inside the devcontainer.json file add: `"remoteUser key": "vscode",` in order to be logged in as vscode instead of root in the terminal (This means that ownership of new files will not be root and thereby locked for other users.). This was NOT WORKING since creating the user in the Dockerfile meant that existing files could not be editted by that user (Could not give it sudo privileges). LOOK more in to this
